@@ -6,6 +6,11 @@
 <main>
     <div class="filter">
       {# --VOTRE FORMULAIRE DE FILTRE ICI-- #}
+    {{ form_start(form) }}
+        {{ form_row(form.race) }}
+        <button type="submit" class="btn btn-primary">Filtrer</button>
+    {{ form_end(form) }}
+
     </div>
     
     <section id="survivants" >
