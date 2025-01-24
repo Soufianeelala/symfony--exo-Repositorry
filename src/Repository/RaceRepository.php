@@ -15,8 +15,22 @@ class RaceRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Race::class);
     }
-    
+   
 
+//  /**
+//      * Récupère toutes les races sous forme d'un tableau
+//      * @return array
+//      */
+//     public function findAllRaces(): array
+//     {
+//         return $this->createQueryBuilder('r')
+//             ->join('s.race', 'r') // Jointure avec l'entité Race
+
+//             ->select('r.id, r.race_name')
+//             ->orderBy('r.race_name', 'ASC') // Trie par nom de race
+//             ->getQuery()
+//             ->getArrayResult(); // Retourne un tableau associatif
+//     }
 
     //    /**
     //     * @return Race[] Returns an array of Race objects

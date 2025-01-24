@@ -1,8 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}Puissances par Race{% endblock %}
 
 {% block body %}
-<h1>Puissance de chaque race</h1>
-   
+<main>
+    <h1>Puissance Cumulée par Race</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Race</th>
+                <th>Puissance Cumulée</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for race in racesWithPower %}
+                <tr>
+                    <td>{{ race.race }}</td>
+                    <td>{{ race.totalPower }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="2">Aucune donnée disponible.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</main>
 {% endblock %}

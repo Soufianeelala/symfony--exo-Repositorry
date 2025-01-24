@@ -11,11 +11,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 final class PowerController extends AbstractController
 {
     #[Route('/power', name: 'app_power')]
-    public function index(): Response
-    {     
+    public function index(SurvivantRepository $repository): Response
+    {     // Appeler la méthode du repository pour récupérer les données
+        $racesWithPower = $repository->getRacesWithTotalPower();
+    
 
         return $this->render('power/power.html.twig', [
-           
+            'racesWithPower' => $racesWithPower,
+
         ]);
     }
 }
